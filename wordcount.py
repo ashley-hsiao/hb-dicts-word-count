@@ -1,36 +1,45 @@
 word_doc = open("test.txt")
 
-def line_break(word_doc):
-    combined_list_of_words = []
+combined_list_of_words = []
 
-    for line in word_doc:
-        line = line.rstrip()
+for line in word_doc:
+    line = line.rstrip()
 
-        # print line
+    # print line
 
-        words = line.split(" ")
+    words = line.split(" ")
 
-        combined_list_of_words += words 
-    print combined_list_of_words
+    combined_list_of_words += words 
 
-    print len(combined_list_of_words)
+# Iterates each line from text.txt, split, and appends to combined_list_of_words.
+
+print combined_list_of_words
 
 
-    unique_words = {}
-    
-    value = 1
+unique_words = {}
 
-    for word in combined_list_of_words:
-        unique_words[word] = value
+value = 1
 
-        if word in unique_words:
-            value += 1
+for word in combined_list_of_words:
+    unique_words[word] = value
 
-    print unique_words
+    # print word
+    # print unique_words[word]
+    # print value
 
-    print len(unique_words)
+    if word in unique_words:
+        unique_words[word] += 1
 
-line_break(word_doc)
+    # else:
+    #     pass
+
+
+# We iterated through combined_list_of_words and assigned key value pairs to unique_words dictionary
+
+print unique_words
+
+
+
 
 
 
